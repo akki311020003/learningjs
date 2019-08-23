@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<style>
+
+
+body,
+html {
+    height: 100%;
+    margin: 0px;
+    background-color: black;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: flex;
+    text-align: left;
+    background-image: url(https://images.wallpaperscraft.com/image/mountains_night_sky_145391_3840x2160.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    
+}
+
+body p{
+    text-align: left;
+    color: white;
+    font-family: 'Avenir', sans-serif;
+    font-size: 5vmax;
+    top: 50%;
+    left: 500px;
+}
+#animate {
+
+border: 2px solid transparent;
+border-bottom: 60px solid #fff;
+position: absolute;
+transform-origin: top center;
+opacity: 0.5;
+transform: rotate(-45deg);
+left: 100px;
+border-radius: 100%;
+}
+
+#animate:after {
+content: '';
+position: absolute;
+height: 4px;
+width: 4px;
+top: 55px;
+left: -2px;
+border-radius: 100%;
+background: #fff;
+box-shadow: 0 0 15px 0 #fff;
+
+}
+
+
+</style>
+<body>
+    <p>Happy Birthday Ani <br> Party Hard</p>
+
+
+
+
+  <div id ="animate"></div>
+
+
+<script>
+
+var dot = setInterval(myMove, 3000);
+function myMove() {
+
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var two = Math.floor(Math.random() * 1000);
+  var id = setInterval(frame, 10);
+  function frame() {
+    
+    if(pos < 100) {
+    
+       
+      
+      pos+=2; 
+      elem.style.top =  pos + "px"; 
+      elem.style.opacity = 1;
+      elem.style.left = two + pos + "px"; 
+        console.log(pos);
+        
+
+    } else{
+      elem.style.opacity = (300-pos)/300;
+      elem.style.borderbottomwidth = (pos/2) + "px";
+      pos+=10; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = two + pos + "px"; 
+
+        if (pos>300){
+            pos = 0;
+            clearInterval(id);
+            
+            
+        }
+    }
+  }
+}
+
+
+</script>>
+
+
+</body>
+</html>
